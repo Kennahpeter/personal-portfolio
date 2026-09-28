@@ -1,0 +1,325 @@
+/* ==========================================================================
+   Kennedy Peter — Portfolio
+   Monochrome design system: pure black, pure white, and grayscale only.
+   ========================================================================== */
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --gray-90: #1a1a1a;
+  --gray-60: #555555;
+  --gray-30: #cccccc;
+  --gray-10: #f2f2f2;
+
+  --font-display: 'Archivo Black', 'Arial Black', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  --wrap: 1100px;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--black);
+  color: var(--white);
+  padding: 12px 20px;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--black);
+  outline-offset: 3px;
+}
+
+/* ---- Header / Hero ---- */
+.site-header {
+  border-bottom: 4px solid var(--black);
+  padding: 56px 0 40px;
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "eyebrow eyebrow nav"
+    "name name name"
+    "role role role";
+  align-items: start;
+  row-gap: 12px;
+  column-gap: 24px;
+}
+
+.eyebrow {
+  grid-area: eyebrow;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--gray-60);
+}
+
+.header-nav {
+  grid-area: nav;
+  display: flex;
+  gap: 24px;
+  align-self: center;
+}
+.header-nav a {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.15s ease;
+}
+.header-nav a:hover { border-color: var(--black); }
+
+.name {
+  grid-area: name;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  line-height: 0.94;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.role {
+  grid-area: role;
+  font-size: 1.05rem;
+  color: var(--gray-60);
+  max-width: 40ch;
+}
+
+/* ---- Section number heading (shared) ---- */
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  color: var(--gray-60);
+  border-top: 2px solid var(--black);
+  padding-top: 14px;
+  margin-bottom: 40px;
+}
+.section-num--light {
+  color: var(--gray-30);
+  border-top-color: var(--white);
+}
+
+/* ---- About ---- */
+.about { padding: 88px 0; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 56px;
+}
+
+.about-body .lede {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  max-width: 52ch;
+  margin-bottom: 24px;
+}
+
+.about-body p {
+  max-width: 60ch;
+  color: var(--gray-90);
+}
+
+.skills-heading {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  color: var(--gray-60);
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 24px;
+}
+.skills-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gray-30);
+  font-size: 0.95rem;
+}
+
+/* ---- Projects ---- */
+.projects {
+  padding: 88px 0;
+  background: var(--gray-10);
+  border-top: 4px solid var(--black);
+  border-bottom: 4px solid var(--black);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.project-card {
+  background: var(--white);
+  border: 2px solid var(--black);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.project-card--featured {
+  background: var(--black);
+  color: var(--white);
+}
+.project-card--featured .project-index,
+.project-card--featured .project-desc {
+  color: var(--gray-30);
+}
+.project-card--featured .project-tags li {
+  border-color: var(--white);
+}
+
+.project-index {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--gray-60);
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.project-desc {
+  color: var(--gray-60);
+  flex-grow: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.project-tags li {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  border: 1px solid var(--black);
+  padding: 4px 10px;
+}
+
+.project-link {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  border-bottom: 2px solid currentColor;
+  align-self: flex-start;
+  padding-bottom: 2px;
+}
+
+/* ---- Contact ---- */
+.contact {
+  background: var(--black);
+  color: var(--white);
+  padding: 88px 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.contact-lede {
+  font-size: 1.1rem;
+  color: var(--gray-30);
+  max-width: 42ch;
+}
+
+.contact-list li {
+  border-bottom: 1px solid var(--gray-90);
+}
+.contact-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 18px 0;
+}
+.contact-list .contact-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--gray-30);
+}
+.contact-list .contact-value {
+  font-size: 1.1rem;
+  transition: opacity 0.15s ease;
+}
+.contact-list a:hover .contact-value { opacity: 0.6; }
+
+/* ---- Footer ---- */
+.site-footer {
+  padding: 24px 0;
+}
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--gray-60);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 860px) {
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .project-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 20px; }
+
+  .header-grid {
+    grid-template-areas:
+      "eyebrow eyebrow eyebrow"
+      "name name name"
+      "role role role"
+      "nav nav nav";
+  }
+  .header-nav { gap: 18px; margin-top: 8px; }
+
+  .skills-list { grid-template-columns: 1fr; }
+
+  .site-footer .footer-grid {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
