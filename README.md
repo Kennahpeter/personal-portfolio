@@ -1,33 +1,54 @@
-# Kennedy Peter — Personal Portfolio
+# personal-portfolio
 
-A personal developer portfolio built with hand-written HTML and CSS (no
-frameworks), showcasing my background, skills, and projects.
+My personal site. Built it right after finishing my JS calculator project,
+partly to have somewhere to point people to, partly to get more reps in with
+plain HTML and CSS before I lean on frameworks.
 
-**Live site:** _add your GitHub Pages link here after deploying_
+Live: https://kennahpeter.github.io/personal-portfolio/
 
-## Sections
+## What's here
 
-- **Header** — name and role
-- **About Me** — short bio and skills list
-- **Projects** — CSS Grid showcase, featuring the [JS Calculator](https://github.com/Kennahpeter/js-calculator) project
-- **Contact** — GitHub, LinkedIn, X, and Behance links
+Four sections on one page — name/role up top, a bit about me and what I'm
+learning, a project grid, and contact links at the bottom.
 
-## Design
+The project grid currently has two cards: the calculator, and this site
+itself. Not padding it out with fake projects just to fill space — more will
+go up as I finish them.
 
-Strictly black, white, and grayscale. Layout uses semantic HTML5 elements
-(`header`, `main`, `section`, `article`, `footer`), CSS Grid for the project
-section, and media queries for responsive behavior down to mobile.
+## Why black and white
 
-## Files
+No color decisions to second-guess, and it keeps the calculator's plain
+CLI-output feel connected to the site. Everything is grayscale — pure black,
+pure white, a few grays for hierarchy. Two fonts: Archivo Black for headings,
+Inter for everything else.
 
-- `index.html` — page structure and content
-- `styles.css` — all styling
+## Stack
 
-## Running locally
+Just HTML and CSS. No JS framework, no build step, no Bootstrap. The project
+section uses CSS Grid (`repeat(2, 1fr)` on desktop, collapses to one column
+under 860px). Rest of the layout is Grid and Flexbox mixed as needed.
 
-Open `index.html` directly in a browser, or serve the folder with any static
-file server.
+```
+index.html
+styles.css
+```
 
-## Deployment
+## Running it
 
-Deployed via GitHub Pages from the `main` branch, root folder.
+There's nothing to install. Clone it and open `index.html`, or if you want
+live reload:
+
+```bash
+git clone https://github.com/Kennahpeter/personal-portfolio.git
+cd personal-portfolio
+python3 -m http.server 8000
+```
+
+then visit `localhost:8000`.
+
+## Notes to self
+
+- Bio text is still a first draft — go back and make it sound more like me
+- Add a real project once the next one's done, swap out the "this site"
+  placeholder card
+- Get a proper headshot instead of no photo at all
