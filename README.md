@@ -28,27 +28,3 @@ Just HTML and CSS. No JS framework, no build step, no Bootstrap. The project
 section uses CSS Grid (`repeat(2, 1fr)` on desktop, collapses to one column
 under 860px). Rest of the layout is Grid and Flexbox mixed as needed.
 
-```
-index.html
-styles.css
-```
-
-## Running it
-
-There's nothing to install. Clone it and open `index.html`, or if you want
-live reload:
-
-```bash
-git clone https://github.com/Kennahpeter/personal-portfolio.git
-cd personal-portfolio
-python3 -m http.server 8000
-```
-
-then visit `localhost:8000`.
-
-## Notes to self
-
-- Bio text is still a first draft — go back and make it sound more like me
-- Add a real project once the next one's done, swap out the "this site"
-  placeholder card
-- Get a proper headshot instead of no photo at all
